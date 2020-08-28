@@ -1,0 +1,19 @@
+<h1><p style="color:green;"><u>There are {{count}} words in your text.</u></p></h1>
+
+<a href="{% url 'home' %}">Start Again</a>
+
+<br />
+<br />
+<hr>
+
+<h3>Your text</h3>
+{{ fulltext }}
+
+<h3>Top 5 most frequently used words:</h3>
+
+{% for word, counttotal in sortedwords %}
+
+{{ word }} - {{ counttotal}}
+<br />
+
+{% endfor %}
